@@ -47,6 +47,9 @@ dependencies:
   class-validator:
     specifier: 0.14.0
     version: registry.npmjs.org/class-validator@0.14.0
+  dayjs:
+    specifier: ^1.11.10
+    version: registry.npmjs.org/dayjs@1.11.10
   fb:
     specifier: 2.0.0
     version: registry.npmjs.org/fb@2.0.0
@@ -4956,6 +4959,12 @@ packages:
     engines: {node: '>=0.11'}
     dependencies:
       '@babel/runtime': registry.npmjs.org/@babel/runtime@7.23.6
+    dev: false
+
+  registry.npmjs.org/dayjs@1.11.10:
+    resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dayjs/-/dayjs-1.11.10.tgz}
+    name: dayjs
+    version: 1.11.10
     dev: false
 
   registry.npmjs.org/debug@2.6.9:

@@ -45,6 +45,7 @@
     "bcryptjs": "2.4.3",
     "class-transformer": "0.5.1",
     "class-validator": "0.14.0",
+    "dayjs": "^1.11.10",
     "fb": "2.0.0",
     "google-auth-library": "9.4.1",
     "handlebars": "4.7.8",
