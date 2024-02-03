@@ -27,7 +27,6 @@ import { DataSource, DataSourceOptions } from 'typeorm';
 import { AllConfigType } from './config/config.type';
 import { SessionModule } from './modules/session/session.module';
 import { MailerModule } from './modules/mailer/mailer.module';
-import { HandHistoryModule } from './modules/hand-history/hand-history.module';
 
 @Module({
   imports: [
@@ -85,8 +84,7 @@ import { HandHistoryModule } from './modules/hand-history/hand-history.module';
     SessionModule,
     MailModule,
     MailerModule,
-    HomeModule,
-    HandHistoryModule,
+    HomeModule
   ],
 })
 export class AppModule {}
