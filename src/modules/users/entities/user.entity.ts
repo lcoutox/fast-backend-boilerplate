@@ -10,6 +10,7 @@ import {
   UpdateDateColumn,
   BeforeInsert,
   BeforeUpdate,
+  JoinColumn,
 } from 'typeorm';
 import { Role } from '../../roles/entities/role.entity';
 import { Status } from '../../statuses/entities/status.entity';
@@ -21,8 +22,8 @@ import { Exclude, Expose } from 'class-transformer';
 
 @Entity()
 export class User extends EntityHelper {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   // For "string | null" we need to use String type.
   // More info: https://github.com/typeorm/typeorm/issues/2567
@@ -56,39 +57,42 @@ export class User extends EntityHelper {
   provider: string;
 
   @Index()
-  @Column({ type: String, nullable: true })
+  @Column({ type: String, nullable: true, name: 'social_id' })
   @Expose({ groups: ['me', 'admin'] })
   socialId: string | null;
 
   @Index()
-  @Column({ type: String, nullable: true })
+  @Column({ type: String, nullable: true, name: 'first_name' })
   firstName: string | null;
 
   @Index()
-  @Column({ type: String, nullable: true })
+  @Column({ type: String, nullable: true, name: 'last_name' })
   lastName: string | null;
 
   @ManyToOne(() => FileEntity, {
     eager: true,
   })
+  @JoinColumn({ name: 'photo_id' })
   photo?: FileEntity | null;
 
   @ManyToOne(() => Role, {
     eager: true,
   })
+  @JoinColumn({ name: 'role_id' })
   role?: Role | null;
 
   @ManyToOne(() => Status, {
     eager: true,
   })
+  @JoinColumn({ name: 'status_id' })
   status?: Status;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ name: 'updated_at' })
   updatedAt: Date;
 
-  @DeleteDateColumn()
+  @DeleteDateColumn({ name: 'deleted_at' })
   deletedAt: Date;
 }

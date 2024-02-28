@@ -84,7 +84,7 @@ import { MailerModule } from './modules/mailer/mailer.module';
     SessionModule,
     MailModule,
     MailerModule,
-    HomeModule
+    HomeModule,
   ],
 })
 export class AppModule {}
